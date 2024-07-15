@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:myapp/constants/colors.dart';
 import 'package:myapp/constants/size.dart';
 import 'package:myapp/widgets/drawer_mobile.dart';
@@ -66,10 +65,10 @@ class _HomePageState extends State<HomePage> {
                 width: screenWidth,
                 color: CustomColor.bgLight1,
                 padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-                child: Column(
+                child: const Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Text(
+                    Text(
                       "What I can do",
                       style: TextStyle(
                         fontSize: 24,
@@ -77,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                         color: CustomColor.whitePrimary,
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                     SkillsDesktop()
                   ],
                 ),
