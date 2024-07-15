@@ -17,7 +17,9 @@ class HeaderDesktop extends StatelessWidget {
       decoration: kHeaderDecoration,
       child: Row(
         children: [
-          SiteLogo(onTap: () {}),
+          SiteLogo(onTap: () {
+            print("TEST");
+          }),
           const Spacer(),
           for (int i = 0; i < navItems.length; i++)
             Padding(
