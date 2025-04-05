@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:myapp/constants/colors.dart';
 import 'package:myapp/constants/size.dart';
@@ -7,7 +6,7 @@ import 'package:myapp/widgets/header_desktop.dart';
 import 'package:myapp/widgets/header_mobile.dart';
 import 'package:myapp/widgets/main_desktop.dart';
 import 'package:myapp/widgets/main_mobile.dart';
-import 'package:myapp/widgets/skills_desktop.dart';
+import 'package:myapp/widgets/skills_mobile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -29,19 +28,17 @@ class _HomePageState extends State<HomePage> {
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: CustomColor.scaffoldBg,
-          endDrawer: constraints.maxWidth < kMinDesktopWidth
+          endDrawer: constraints.maxWidth < kMinimunDesktopWidth
               ? const DrawerMobile()
               : null,
           body: ListView(
             scrollDirection: Axis.vertical,
             children: [
               // MAIN
-              if (constraints.maxWidth > kMinDesktopWidth)
+              if (constraints.maxWidth > kMinimunDesktopWidth)
                 Column(
                   children: [
-                    HeaderDesktop(
-                      onLogoTap: () {},
-                    ),
+                    HeaderDesktop(onLogoTap: () {}),
                     const MainDesktop()
                   ],
                 )
@@ -77,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    SkillsDesktop()
+                    SkillsMobile()
                   ],
                 ),
               ),
@@ -106,4 +103,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
